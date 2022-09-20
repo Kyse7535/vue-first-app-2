@@ -51,8 +51,15 @@ export default {
 
 </script>
 <style>
+  
+
 .height-70px {
   height: 70px;
+}
+
+ a {
+  font-family: 'Poppins';
+  color: #707070;
 }
 
 

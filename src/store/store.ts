@@ -36,21 +36,6 @@ export const store = createStore<State>({
     }
   },
   actions: {
-    async fetchProducts(context) {
-      const response = await fetch(
-          'https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=4209&limit=48&country=US&sort=freshness&currency=USD&sizeSchema=US as types.Currency&lang=en-US',
-          options)
-          .then(response => response.json() as Promise<types.FileProduct>)
-          .then(response => {
-            console.log(response.products)
-            return response.products
-          })
-          .catch(err => console.error(err));
-          if ((response instanceof Array<types.Product>) && JSON.stringify(context.state.products) == JSON.stringify([]) ) {
-            context.commit('initProducts', response);
-          }
-      
-    },
      async fetchProductsLocally(context) {
       const products: Array<types.Product> = [
         {

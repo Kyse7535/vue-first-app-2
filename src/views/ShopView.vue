@@ -1,6 +1,6 @@
 <template>
 <main>
-  <div class="h-150 bg-grey-lighten-1">
+  <div class="h-150 bg-grey-lighten-4 ">
     <v-container class="position-relative d-flex h-150">
       <span class="d-block position-absolute h-auto start-0">
         <router-link class="ma-0 text-decoration-none " to="/">
@@ -26,8 +26,8 @@
       <v-col v-for="product in products" :key="product.id" cols="4" class=" position-relative h-400px " >
         <img :src="`https://${product.imageUrl}`" :alt="product.name" class=" w-100 h-auto " />
         <div class=" position-absolute bottom-0 ">
-          <p>{{firstWord(product.name)}}...</p>
-          <p class=" font-weight-bold ">{{product.price.current.text}}</p>
+          <p class=" product-name grey--text text--lighten-4 " >{{firstWord(product.name)}}...</p>
+          <p class=" product-price font-weight-bold ">{{product.price.current.text}}</p>
         </div>
       </v-col>
     </v-row>
@@ -68,6 +68,8 @@ export default defineComponent({
 </script>
 
 <style>
+  
+
 .px-8 {
   padding-left: 150px;
   padding-right: 150px;
@@ -75,6 +77,12 @@ export default defineComponent({
 
 .h-150 {
   height: 150px;
+}
+
+.product-price {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .start-0 {
